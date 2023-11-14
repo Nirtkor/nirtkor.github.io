@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница погоды</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #2196F3, #FFC107);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Погода в выбранном городе</h2>
+    <div id="weather-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const storedCity = localStorage.getItem('selectedCity');
+            if (storedCity) {
+                getWeatherForCity(storedCity);
+            }
+        });
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
